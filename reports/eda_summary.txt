@@ -1,0 +1,31 @@
+NORTHSTAR DATA CHECK
+====================
+Rows: 1,800
+Columns: 9
+Date range: 2026-07-10 to 2026-10-07
+Missing cells: 0
+Duplicate order IDs: 0
+Total revenue: $139,897.02
+Average order value: $77.72
+
+Missing values by column:
+order_id              0
+order_date            0
+customer_id           0
+region                0
+product               0
+category              0
+quantity              0
+revenue               0
+returning_customer    0
+
+Numeric column statistics:
+       quantity  revenue
+count   1800.00  1800.00
+mean       1.34    77.72
+std        0.58    42.12
+min        1.00    25.52
+25%        1.00    51.30
+50%        1.00    67.74
+75%        2.00    90.92
+max        3.00   288.53
