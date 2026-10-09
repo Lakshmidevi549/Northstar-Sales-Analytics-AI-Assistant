@@ -4,6 +4,7 @@ from datetime import date, timedelta
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import urlparse, parse_qs
+import os
 
 ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = Path(os.getenv('DATABASE_PATH', ROOT / 'data' / 'northstar.db'))
@@ -140,7 +141,7 @@ if __name__=='__main__':
     DB_PATH.parent.mkdir(parents=True,exist_ok=True)
     if not DB_PATH.exists():
         raise SystemExit(f'Database not found at {DB_PATH}. Run: python 02_Python_EDA\\01_create_database.py')
-    host=os.getenv('HOST','127.0.0.1'); port=int(os.getenv('PORT','8000'))
+    host='0.0.0.0'; port=int(os.getenv('PORT','8000'))
     print(f'Northstar running at http://{host}:{port}  (Ctrl+C to stop)')
     ThreadingHTTPServer((host,port),Handler).serve_forever()
 
